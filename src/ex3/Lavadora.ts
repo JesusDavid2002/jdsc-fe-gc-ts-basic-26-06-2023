@@ -17,6 +17,10 @@ class Lavadora extends Electrodoméstico{
     getCarga(){
         return this.carga;
     }
+    
+    setCarga(newCarga: number){
+        return this.carga = newCarga;
+    }
 
     precioFinalL(){
         let cargaT = this.getCarga();
