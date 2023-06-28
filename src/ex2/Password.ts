@@ -1,31 +1,39 @@
 //Reto 2 de TS
 
-let defLong:number = 8;
+let defLong: number = 8;
 
 class Password {
     //1-Atributos de la class
     //private
     private longitud: number;
-    private constraseña: number[];
+    private contraseña: string;
 
     //2-Constructor de la class
-    constructor(){
-        this.longitud = defLong;
-        this.constraseña = [];
+    constructor(newLongitud: number = defLong){
+        this.longitud = newLongitud;
+        this.contraseña = this.generadorContraseña();
     }
 
     //3- Métodos de la class
-    setContraseña(newLongi:number):void{
-        for (let i = 0; i < newLongi; i++) {
-            this.constraseña.push(Math.floor(Math.random()*10));
+    generadorContraseña(): string{
+        let caracteresContra: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let constraseñaTemp = '';
+        for (let i = 0; i < this.longitud; i++) {
+            let posicion = Math.floor(Math.random() * caracteresContra.length + 1);
+            constraseñaTemp += caracteresContra.charAt(posicion);
         }
-    }
+        return constraseñaTemp;
+    }   
 
-    getContraseña():string{
-        return this.constraseña.join("");
-    }
-
-    getLogitud():number{
+    getLongitud(): number{
         return this.longitud;
+    }
+
+    setLongitud(newLongitud: number){
+        return this.longitud = newLongitud;
+    } 
+    
+    getContraseña(): string{
+        return this.contraseña;
     }
 }

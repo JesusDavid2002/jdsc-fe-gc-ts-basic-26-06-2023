@@ -3,20 +3,27 @@
 let defLong = 8;
 class Password {
     //2-Constructor de la class
-    constructor() {
-        this.longitud = defLong;
-        this.constraseña = [];
+    constructor(newLongitud = defLong) {
+        this.longitud = newLongitud;
+        this.contraseña = this.generadorContraseña();
     }
     //3- Métodos de la class
-    setContraseña(newLongi) {
-        for (let i = 0; i < newLongi; i++) {
-            this.constraseña.push(Math.floor(Math.random() * 10));
+    generadorContraseña() {
+        let caracteresContra = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let constraseñaTemp = '';
+        for (let i = 0; i < this.longitud; i++) {
+            let posicion = Math.floor(Math.random() * caracteresContra.length + 1);
+            constraseñaTemp += caracteresContra.charAt(posicion);
         }
+        return constraseñaTemp;
+    }
+    getLongitud() {
+        return this.longitud;
+    }
+    setLongitud(newLongitud) {
+        return this.longitud = newLongitud;
     }
     getContraseña() {
-        return this.constraseña.join("");
-    }
-    getLogitud() {
-        return this.longitud;
+        return this.contraseña;
     }
 }

@@ -4,7 +4,7 @@ type genero = 'H' | 'M';
 const defSexo: genero = 'H';
 
 class Persona {
-    //1-Atributos de class
+    //1- Atributos de class
     //private
     private nombre: string;
     private edad: number;
@@ -13,7 +13,7 @@ class Persona {
     private peso: number;
     private altura: number;
 
-    //2-Constructor de la class
+    //2- Constructor de la class
     constructor(newDNI: string){
         this.nombre = '';
         this.edad = 0;
@@ -23,4 +23,52 @@ class Persona {
         this.altura = 0;
     }
     
+    //3- Métodos de la class
+    getNombre(){
+        return this.nombre;
+    }
+
+    setNombre(newNombre: string){
+        return this.nombre = newNombre;
+    }
+    
+    getEdad(){
+        return this.edad;
+    }
+
+    setEdad(newEdad: number){
+        return this.edad = newEdad;
+    }
+
+    getDNI(){
+        return this.DNI;
+    }
+
+    setDNI(newDNI: string){
+        return this.DNI = newDNI;
+    }
+    
+    getSexo(){
+        return this.sexo;
+    }
+
+    setSexo(newSexo: genero){
+        return this.sexo = newSexo;
+    }
+    
+    getPeso(){
+        return this.peso;
+    }
+
+    setPeso(newPeso: number){
+        return this.peso = newPeso;
+    }
+    
+    getAltura(){
+        return this.altura;
+    }
+
+    setAltura(newAltura: number){
+        return this.altura = newAltura;
+    }
 }

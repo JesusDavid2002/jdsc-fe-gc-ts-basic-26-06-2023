@@ -27,8 +27,8 @@ tv2.setPrecioBase(750);
 let tv3 = new Television('azul', 'D', 17);
 tv3.setPrecioBase(550);
 //Operaciones
-let sumaLV = lv1.precioFinalL() + lv2.precioFinalL() + lv3.precioFinalL();
-let sumaTV = tv1.precioFinalT() + tv2.precioFinalT() + tv3.precioFinalT();
+let sumaLV = lv1.precioFinal() + lv2.precioFinal() + lv3.precioFinal();
+let sumaTV = tv1.precioFinal() + tv2.precioFinal() + tv3.precioFinal();
 let sumaTotal = electrD1.precioFinal() + electrD2.precioFinal() + electrD3.precioFinal() + electrD4.precioFinal() + sumaLV + sumaTV;
 //Mostrar por consola 
 arrayElectro.push(electrD1, electrD2, electrD3, electrD4, lv1, lv2, lv3, tv1, tv2, tv3);

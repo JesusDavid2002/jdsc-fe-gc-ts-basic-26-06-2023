@@ -7,7 +7,7 @@ class Electrodoméstico {
     //2-Constructor de la class
     constructor(newColor, newCE, newPeso) {
         this.precioBase = defPrecio;
-        this.color = newColor;
+        this.color = this.comprobarColor(newColor);
         this.CE = this.comprobarConsumoEnergetico(newCE);
         this.peso = newPeso;
     }
@@ -41,6 +41,25 @@ class Electrodoméstico {
                 return 'E';
             default:
                 return defCE;
+        }
+    }
+    comprobarColor(color) {
+        switch (color) {
+            case 'negro':
+                return 'negro';
+                break;
+            case 'rojo':
+                return 'rojo';
+                break;
+            case 'azul':
+                return 'azul';
+                break;
+            case 'gris':
+                return 'gris';
+                break;
+            default:
+                return defColor;
+                break;
         }
     }
     precioFinal() {

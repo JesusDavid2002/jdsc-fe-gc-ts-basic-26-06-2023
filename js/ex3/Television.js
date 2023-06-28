@@ -21,14 +21,12 @@ class Television extends Electrodoméstico {
     setCuatroK(newCuatroK) {
         return this.cuatroK = newCuatroK;
     }
-    precioFinalT() {
-        let resolT = this.getResolucion();
-        let cuatroKT = this.getCuatroK();
+    precioFinal() {
         let precioT = super.precioFinal();
-        if (resolT > 40) {
+        if (this.resolucion > 40) {
             precioT += precioT * 0.3;
         }
-        if (cuatroKT == true) {
+        if (this.cuatroK == true) {
             precioT += 50;
         }
         return precioT;

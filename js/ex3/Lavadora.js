@@ -14,10 +14,9 @@ class Lavadora extends Electrodoméstico {
     setCarga(newCarga) {
         return this.carga = newCarga;
     }
-    precioFinalL() {
-        let cargaT = this.getCarga();
+    precioFinal() {
         let precioL = super.precioFinal();
-        if (cargaT > 30) {
+        if (this.carga > 30) {
             precioL += 50;
         }
         return precioL;
